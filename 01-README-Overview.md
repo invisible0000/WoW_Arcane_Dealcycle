@@ -30,7 +30,7 @@
 05-ToTM-Window\.md                  ← 마법의 손길 창 전용 스크립트
 06-Arcane-Soul-Window\.md           ← Arcane Soul 서브루프
 07-Execute-Overrides.md            ← 처형(Execute) 오버라이드
-08-Advanced-Tech-and-Validation.md ← 고급 테크/검증(선택)
+08-Skill-Blocks-and-Timing.md      ← 스킬 블록/타이밍(선택)
 
 ```
 
@@ -47,7 +47,7 @@
 | **05-ToTM-Window.md** | ToTM 전용 스크립트 | 03/04 | 06, 07 |
 | **06-Arcane-Soul-Window.md** | Arcane Soul 서브루프 | 03/04, 05 | 07 |
 | **07-Execute-Overrides.md** | 처형 오버라이드 | 03/04, 05, 06 | - |
-| **08-Advanced-Tech-and-Validation.md** | 고급 테크/검증 | 03~07 | - |
+| **08-Skill-Blocks-and-Timing.md** | 스킬 블록/타이밍 | 03~07 | - |
 
 ---
 
@@ -84,7 +84,7 @@
 | `PRI` | 우선순위(정수, 1이 최상) |
 | `COND_KEY` | 기계적 분기 키(축약) |
 | `HUMAN_COND` | 사람이 읽는 자연어 조건 |
-| `ACTION_SKILL` | 실행 스킬 블록<br>(\`스킬명(영문) \| 성격 \| 시전시간\`) |
+| `ACTION_SKILL` | 실행 스킬 블록<br>(`스킬명(영문) \| 성격 \| 시전시간`) |
 | `NOTES` | 추가 설명/예외(Tempo 예외, Aether 풀채널 등) |
 
 ### 4.4 Mermaid 스타일 가이드
@@ -107,7 +107,7 @@ flowchart TD
   D --> E
   E --> F[06 Arcane Soul]
   F --> G[07 Execute Overrides]
-  C --> H[08 Advanced/Validation]
+  C --> H[08 Skill Blocks/Timing]
   D --> H
 ````
 
@@ -146,7 +146,7 @@ flowchart TD
 4. `05-ToTM-Window.md` — ToTM 전용 미니 스크립트.
 5. `06-Arcane-Soul-Window.md` — Arcane Soul 서브루프.
 6. `07-Execute-Overrides.md` — 처형 오버라이드.
-7. (선택) `08-Advanced-Tech-and-Validation.md` — 테크/검증 메트릭.
+7. (선택) `08-Skill-Blocks-and-Timing.md` — 스킬 블록/타이밍 사전.
 
 ---
 

@@ -1,4 +1,5 @@
 # 08 — Skill-Blocks-and-Timing (스킬 사전 & 시전/채널 타이밍)
+
 > 대상: **WoW 11.2 · 비전 법사(Arcane) · Sunfury · Mythic+**  
 > 목적: 앞선 문서(03~07)의 표·플로우에서 참조하는 **표준 스킬 블록**을 **거짓 없이 단일 규격**으로 정의.  
 > 원칙: **한글 스킬명 (영문명) · 성격 · 시전/채널/즉시 시간**을 반드시 표기. **투사체/채널/오프-GCD/충전 상호작용**을 명시.
@@ -18,7 +19,7 @@
 | S_MISS | **비전 화살 (Arcane Missiles) \| 빌더 \| 채널 2.5s** | GCD | — | **사용 X / (특성·상태에 따라 충전 보정)** | **Aether Missiles만 풀채널**, 그 외 **클립**해 **NP 부여**. **Gucci Missiles**(채널 틱 공중 유지 → Barrage 직후 충전 복원) 가능. |
 | S_EXPL | **비전 폭발 (Arcane Explosion) \| 빌더 \| 즉시** | GCD | — | **사용 X / 충전+1(범위)** | **근접**에서 **0~1(ST) / 0~3(AoE)** 충전 구간 채움. |
 | S_ORB | **비전 구슬 (Arcane Orb) \| 빌더 \| 즉시** | GCD | 짧음 | **사용 X / 통과 대상마다 충전+1** | **<3 충전 시 최우선 빌더**. **Orb Barrage 프록/비행** 관측 시 **직접 사용 보류** 후 **Barrage 연속**으로 이득. |
-| S_BARR | **비전 탄막 (Arcane Barrage) \| 스펜더 \| 즉시** | GCD | — | **기본: 4충전 소모** | **기본 원칙: 4충전 사용**. **Tempo 만료 방지 예외**로 **0충전도 허용**. **Intuition/Harmony/GI/오브 프록** 반응. **ToTM/ASoul ‘마감’** GCD. 투사체 **비행시간** 존재. |
+| S_BARR | **비전 탄막 (Arcane Barrage) \| 스팬더 \| 즉시** | GCD | — | **기본: 4충전 소모** | **기본 원칙: 4충전 사용**. **Tempo 만료 방지 예외**로 **0충전도 허용**. **Intuition/Harmony/GI/오브 프록** 반응. **ToTM/ASoul ‘마감’** GCD. 투사체 **비행시간** 존재. |
 
 ### 1.2 창·대쿨·보조
 
@@ -38,7 +39,7 @@
 | INTU | **직감 (Intuition)** | **강화 Barrage + 충전 환급** | **만료 임박(다음 GCD 전)**이면 **즉시 Barrage**. |
 | TEMPO | **비전 가속 (Arcane Tempo)** | **Barrage로 가속 중첩 획득/유지** | **중첩 만료 임박** 시 **0충전 Barrage 허용**. |
 | HARM | **비전 조화 (Arcane Harmony)** | Missiles 적중 누적 → **Barrage 증폭(최대치)** | **≈12 이상**이면 **Barrage 우선**. |
-| GI | **영광의 광휘 (Glorious Incandescence)** | Sunfury 핵심 — **Barrage 후 충전 복원** | **ToTM ≤6s**면 **보유한 채 대기 → Touch에 결합** 가치↑. |
+| GI | **영광의 광휘 (Glorious Incandescence)** | Sunfury 핵심 — **Barrage 후 충전 복원** | **ToTM ≤6s**면 **보유한 창 대기 → Touch에 결합** 가치↑. |
 | ASOUL | **비전화(Arcane Soul)** | Surge 종료 후 **충전 소모 없이 Barrage 연쇄** | 창 동안 **Barrage 기본값**, **마감 Barrage**, 종료 직후 **Shifting Power**. |
 
 > 주: 위 키들은 본 문서 03~07의 테이블/플로우 **조건문 이름**과 동일.
@@ -63,7 +64,7 @@
 | BUILDER_FAST | Orb / Explosion | 충전 복구/확보를 **최우선**으로 하는 빌더 | **CH<3 → Orb**, (AoE 근접) **CH≤3 → Explosion** |
 | BUILDER_NP | Missiles | **NP 부여/유지**를 위한 빌더 | **NP=0 & CC≥1 → Missiles(클립)** |
 | BUILDER_FILL | Blast | 루프의 **기본 채움** | **우선 조건 없음 → Blast** |
-| SPENDER_MAIN | Barrage | 모든 창/루프의 **핵심 스펜더** | **HARM↑/INTU/TEMPO 임박/ASOUL/마감**에서 우선 |
+| SPENDER_MAIN | Barrage | 모든 창/루프의 **핵심 스팬더** | **HARM↑/INTU/TEMPO 임박/ASOUL/마감**에서 우선 |
 | WINDOW_ENTRY | Surge / Touch / Evocation | 창/대쿨의 **진입** | **Barrage 선발사 → Touch(Off-GCD)** |
 | CDR | Shifting Power | 대쿨 회전 | **버스트 직후 채널** |
 
@@ -86,42 +87,42 @@
 
 ## 5) 결정 트리(요약 Mermaid) — “무엇을 누를까?”
 
-> **입력**: 현재 충전(CH), 버프/프록(HARM/INTU/TEMPO/NP/AETH), 창 상태(ToTM/ASOUL), 오브(프록/비행), 마나.  
-> **출력**: **라벨 → 실제 스킬**.
+> 입력: 현재 충전(CH), 버프/프록(HARM/INTU/TEMPO/NP/AETH), 창 상태(ToTM/ASOUL), 오브(프록/비행), 마나.  
+> 출력: **라벨 → 실제 스킬**.
 
 ```mermaid
 flowchart TD
-  A((Decision Root)) --> B{창 상태?}
-  B -- ToTM 진입 직전 --> T1[SPENDER_MAIN = Barrage\n(선-발사)] --> T2[WINDOW_ENTRY = Touch(Off-GCD)\n<명중 전>]
-  B -- ASoul 진행 중 --> S1[SPENDER_MAIN = Barrage\n(연쇄 기본)]
-  B -- 일반 루프 --> C{INTU/TEMPO 만료 임박?}
-  C -- 예 --> BARR1[SPENDER_MAIN = Barrage\n(0충전 허용)]
-  C -- 아니오 --> D{HARM ≥~12?}
-  D -- 예 --> BARR2[SPENDER_MAIN = Barrage]
-  D -- 아니오 --> E{CH < 3 & Orb 가능?}
-  E -- 예 --> ORB[BUILDER_FAST = Orb]
-  E -- 아니오 --> F{NP = 0 & CC ≥ 1?}
-  F -- 예 --> MISS[BUILDER_NP = Missiles(클립; Aether=풀)]
-  F -- 아니오 --> G{CH ≤ 1(ST)/≤3(AoE) & 근접?}
-  G -- 예 --> EXPL[BUILDER_FAST = Explosion]
-  G -- 아니오 --> H[BUILDER_FILL = Blast]
+  A(("Decision Root")) --> B["창 상태?"]
+  B -- "ToTM 진입 직전" --> T1["SPENDER_MAIN = Barrage\n(선-발사)"] --> T2["WINDOW_ENTRY = Touch(Off-GCD)\n<명중 전>"]
+  B -- "ASoul 진행 중" --> S1["SPENDER_MAIN = Barrage\n(연쇄 기본)"]
+  B -- "일반 루프" --> C{"INTU/TEMPO 만료 임박?"}
+  C -- "예" --> BARR1["SPENDER_MAIN = Barrage\n(0충전 허용)"]
+  C -- "아니오" --> D{"HARM ≥~12?"}
+  D -- "예" --> BARR2["SPENDER_MAIN = Barrage"]
+  D -- "아니오" --> E{"CH < 3 & Orb 가능?"}
+  E -- "예" --> ORB["BUILDER_FAST = Orb"]
+  E -- "아니오" --> F{"NP = 0 & CC ≥ 1?"}
+  F -- "예" --> MISS["BUILDER_NP = Missiles(클립; Aether=풀)"]
+  F -- "아니오" --> G{"CH ≤ 1(ST)/≤3(AoE) & 근접?"}
+  G -- "예" --> EXPL["BUILDER_FAST = Explosion"]
+  G -- "아니오" --> H["BUILDER_FILL = Blast"]
   %% 창 마감
-  T2 --> T3[SPENDER_MAIN = Barrage\n(창 마감 GCD)]
-  S1 --> S2{ASoul 종료 임박?}
-  S2 -- 예 --> S3[SPENDER_MAIN = Barrage\n(창 마감 GCD)]
+  T2 --> T3["SPENDER_MAIN = Barrage\n(창 마감 GCD)"]
+  S1 --> S2{"ASoul 종료 임박?"}
+  S2 -- "예" --> S3["SPENDER_MAIN = Barrage\n(창 마감 GCD)"]
 ````
 
 ---
 
 ## 6) 암기용 미니 카드(현장용)
 
-* **ST 오프너**: `Evocation(T–4s) → Surge → (CH<4면 Orb) → Barrage → (비행 중) Touch → Barrage → Shifting Power`
-* **AoE 오프너**: `Evocation → Surge → (CH<3면 Orb) → Barrage → (비행 중) Touch → Barrage → Missiles(Aether면 풀) → Blast(창 내 1회) → Barrage → Shifting Power`
-* **루프 1순위**: `INTU/TEMPO 만료 직전 Barrage` · `HARM≈12+ Barrage` · `CH<3 Orb` · `NP=0&CC≥1 Missiles(클립)`
-* **항상**: **창 마감은 Barrage**, **Aether만 풀채널**, **오브 비행/프록 보이면 연속 Barrage**.
+- **ST 오프너**: `Evocation(T–4s) → Surge → (CH<4면 Orb) → Barrage → (비행 중) Touch → Barrage → Shifting Power`
+- **AoE 오프너**: `Evocation → Surge → (CH<3면 Orb) → Barrage → (비행 중) Touch → Barrage → Missiles(Aether면 풀) → Blast(창 내 1회) → Barrage → Shifting Power`
+- **루프 1순위**: `INTU/TEMPO 만료 직전 Barrage` · `HARM≈12+ Barrage` · `CH<3 Orb` · `NP=0&CC≥1 Missiles(클립)`
+- **항상**: **창 마감은 Barrage**, **Aether만 풀채널**, **오브 비행/프록 보이면 연속 Barrage**.
 
 ---
 
 ## 7) 변경 이력
 
-* **v1.0.0**: 초판 — 스킬 블록/시간/상호작용 표준화, 결정 트리 라벨 정의, 요약 플로우 포함.
+- **v1.0.0**: 초판 — 스킬 블록/시간/상호작용 표준화, 결정 트리 라벨 정의, 요약 플로우 포함.
